@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import api from '~/services/api';
 
-import { Container, MeetupList, Meetup } from './styles';
+import { Container, MeetupList, MeetupContainer } from './styles';
 
-export default function Dashboard() {
+export default function Meetup() {
   useEffect(() => {
     async function loadMeetups() {
       const response = await api.get('meetups');
@@ -14,22 +14,23 @@ export default function Dashboard() {
     <Container>
       <header>
         <strong>Meus meetups</strong>
+        <button type="button">Editar</button>
         <button type="button">Novo meetup</button>
       </header>
 
       <MeetupList>
-        <Meetup>
+        <MeetupContainer>
           TESTE <span>13 de maio</span>
-        </Meetup>
-        <Meetup>
+        </MeetupContainer>
+        <MeetupContainer>
           TESTE <span>13 de maio</span>
-        </Meetup>
-        <Meetup>
+        </MeetupContainer>
+        <MeetupContainer>
           TESTE <span>13 de maio</span>
-        </Meetup>
-        <Meetup>
+        </MeetupContainer>
+        <MeetupContainer>
           TESTE <span>13 de maio</span>
-        </Meetup>
+        </MeetupContainer>
       </MeetupList>
     </Container>
   );
